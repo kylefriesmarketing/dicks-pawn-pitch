@@ -135,6 +135,28 @@ strong{font-weight:700;color:var(--navy-dark)}
 .phase .out{margin-top:11px;padding-top:9px;border-top:1px solid var(--line);font-size:.74rem;color:var(--navy-dark)}
 .phase .out b{color:var(--red)}
 
+/* ---------- integration pipeline ---------- */
+.pipe{display:flex;align-items:stretch;gap:8px;margin-bottom:clamp(12px,1.6vh,20px);flex-wrap:nowrap}
+.pipe-node{flex:1;background:#fff;border-radius:12px;padding:11px 13px;min-width:0;
+  box-shadow:inset 0 0 0 1px rgba(12,37,71,.10),0 3px 12px rgba(12,37,71,.07)}
+.pipe-node .pn-k{font-size:.6rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--grey)}
+.pipe-node b{display:block;font-size:clamp(.8rem,.98vw,.98rem);color:var(--navy-dark);margin:2px 0 3px;line-height:1.2}
+.pipe-node p{font-size:clamp(.68rem,.8vw,.8rem);color:var(--grey);line-height:1.35}
+.pipe-node.lock{box-shadow:inset 0 0 0 2px var(--navy),0 3px 12px rgba(12,37,71,.10)}
+.pipe-node.ai{box-shadow:inset 0 0 0 2px var(--red-bright),0 3px 12px rgba(198,40,45,.13)}
+.pipe-node.lock .pn-k{color:var(--navy)}
+.pipe-node.ai .pn-k{color:var(--red)}
+.pipe-arw{display:flex;align-items:center;color:var(--navy);opacity:.4;font-size:1.2rem;font-weight:800;flex:none}
+.pipe-back{background:var(--ice);border-radius:9px;padding:8px 14px;font-size:clamp(.7rem,.85vw,.85rem);
+  color:var(--navy-dark);font-weight:600;margin-bottom:clamp(12px,1.6vh,20px)}
+.pipe-back b{color:var(--red)}
+.evidence{background:linear-gradient(150deg,var(--navy-deep),var(--navy));border-radius:13px;
+  padding:13px 17px;color:#fff;font-size:clamp(.74rem,.9vw,.9rem);line-height:1.5}
+.evidence b{color:var(--gold)}
+.evidence code{font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:.92em;
+  background:rgba(255,255,255,.13);padding:1px 6px;border-radius:4px;color:#fff}
+@media(max-width:900px){.pipe{flex-wrap:wrap}.pipe-node{flex:1 1 45%}.pipe-arw{display:none}}
+
 /* ---------- calculator ---------- */
 .calc{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(16px,2vw,34px);align-items:start}
 .calc-in{display:flex;flex-direction:column;gap:11px}
@@ -474,7 +496,63 @@ strong{font-weight:700;color:var(--navy-dark)}
   </div>
 </section>
 
-<!-- ========== 9. CALCULATOR ========== -->
+<!-- ========== 9. INTEGRATION ========== -->
+<section class="slide">
+  <span class="eyebrow">The obvious question</span>
+  <h2 class="s-title">How this plugs into the counter</h2>
+  <p class="s-sub">Your pawn system stays the system of record. Nothing here touches a loan, a ticket or a hold — it reads inventory that’s already been created and does the typing that happens afterwards.</p>
+  <div class="body-flow">
+    <div class="pipe">
+      <div class="pipe-node lock">
+        <div class="pn-k">Unchanged</div>
+        <b>The counter</b>
+        <p>Item taken in, ticket written, photographed. Exactly as today.</p>
+      </div>
+      <div class="pipe-arw">›</div>
+      <div class="pipe-node lock">
+        <div class="pn-k">System of record</div>
+        <b>Your pawn software</b>
+        <p>Holds the item number, loan and compliance data. We only ever read from it.</p>
+      </div>
+      <div class="pipe-arw">›</div>
+      <div class="pipe-node ai">
+        <div class="pn-k">The new bit</div>
+        <b>Enrichment layer</b>
+        <p>Photos cleaned, title and description written, category and tags applied, price range suggested.</p>
+      </div>
+      <div class="pipe-arw">›</div>
+      <div class="pipe-node">
+        <div class="pn-k">Human gate</div>
+        <b>Staff approve</b>
+        <p>One screen: accept, edit, or reject. Nothing publishes unread.</p>
+      </div>
+      <div class="pipe-arw">›</div>
+      <div class="pipe-node">
+        <div class="pn-k">Output</div>
+        <b>Every channel</b>
+        <p>Website, eBay, and anywhere else worth listing — from one approval.</p>
+      </div>
+    </div>
+    <div class="pipe-back">↩ &nbsp;<b>Sold anywhere → delisted everywhere.</b> Your stock is one-of-a-kind, so the return path matters more than the outbound one. Selling a ring in Conway that’s still live on eBay is the failure mode this has to prevent.</div>
+    <div class="grid g3" style="margin-bottom:clamp(11px,1.4vh,17px)">
+      <div class="card"><h3>A · Native API</h3>
+        <p>Bravo — who now own PawnMaster — publish an API and already integrate with eBay, Amazon and GunBroker. If your licence includes it, this is a direct read and the cleanest option.</p>
+        <div class="tagline">Best case · <b>days, not weeks</b></div></div>
+      <div class="card"><h3>B · Your own eCommerce module</h3>
+        <p>Bravo sell a storefront sync that already delists sold items automatically. If you’re paying for it, we switch it on and add the AI layer above it rather than rebuilding it.</p>
+        <div class="tagline">Possibly <b>already yours</b></div></div>
+      <div class="card"><h3>C · Scheduled export</h3>
+        <p>If the licence has no API, any pawn system can export a file on a timer. Less elegant, identical result — and the enrichment layer doesn’t care where the data came from, so we upgrade to A later without redoing the work.</p>
+        <div class="tagline warn">Always <b>available</b></div></div>
+    </div>
+    <div class="evidence">
+      <b>Why I think this gap is real:</b> your product SKUs run <code>257652 - dm</code>, <code>514744-tbm</code>, <code>113545 SFconway</code>, <code>892819-South-SMT</code> — <b>twelve different formats</b>, each ending in a person’s initials. Software doesn’t vary its own formatting. Those are people hand-keying items from the pawn system into Shopify, and the initials show it’s at least six of them, each working their own department.
+    </div>
+  </div>
+  <p class="foot-note">One question decides which path we take: <strong>what runs at your counter, and does your licence include API access or the eCommerce module?</strong> If the answer is that you already pay for the sync, I’ll tell you that and we’ll scope around it — I’d rather build the layer that adds something than resell you what you own.</p>
+</section>
+
+<!-- ========== 10. CALCULATOR ========== -->
 <section class="slide dark">
   <span class="eyebrow">The numbers</span>
   <h2 class="s-title">Your inputs, not my estimates</h2>
@@ -652,7 +730,7 @@ strong{font-weight:700;color:var(--navy-dark)}
 </div>
 
 <div id="hud">
-  <span id="hud-n">1</span><span class="sep">/</span><span id="hud-t">13</span>
+  <span id="hud-n">1</span><span class="sep">/</span><span id="hud-t">14</span>
   <button id="prev" aria-label="Previous slide">‹</button>
   <button id="next" aria-label="Next slide">›</button>
 </div>
