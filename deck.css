@@ -246,3 +246,36 @@ strong{font-weight:700;color:var(--navy-dark)}
   .slide.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+
+
+/* ---------- combined-deck additions (flow, before/after, price tags) ---------- */
+/* Additions for this deck only */
+.flow{display:flex;align-items:stretch;gap:9px;flex-wrap:nowrap}
+.flow-step{flex:1;background:#fff;border-radius:13px;padding:13px 15px;min-width:0;
+  box-shadow:inset 0 0 0 1px rgba(12,37,71,.10),0 3px 12px rgba(12,37,71,.07);text-align:center}
+.flow-step .fs-n{width:28px;height:28px;border-radius:50%;background:var(--ice);color:var(--navy);
+  display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;margin-bottom:7px}
+.flow-step b{display:block;font-size:clamp(.82rem,1vw,1rem);color:var(--navy-dark);margin-bottom:3px;line-height:1.25}
+.flow-step p{font-size:clamp(.7rem,.84vw,.84rem);color:var(--grey);line-height:1.4}
+.flow-arw{display:flex;align-items:center;color:var(--navy);opacity:.4;font-size:1.15rem;font-weight:800;flex:none}
+.flow-step.hot{box-shadow:inset 0 0 0 2px var(--red-bright),0 3px 12px rgba(198,40,45,.13)}
+.flow-step.hot .fs-n{background:#fdecec;color:var(--red)}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,24px)}
+.ba{border-radius:15px;padding:clamp(15px,1.6vw,24px)}
+.ba.bad{background:#fdf3f0;box-shadow:inset 0 0 0 1px rgba(163,68,31,.25)}
+.ba.good{background:#eef9f2;box-shadow:inset 0 0 0 1px rgba(31,157,85,.3)}
+.ba .ba-k{font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;display:block}
+.ba.bad .ba-k{color:#a3441f}
+.ba.good .ba-k{color:var(--green)}
+/* .slide.dark h3 in deck.css paints headings white; these cards are light
+   panels sitting ON a dark slide, so re-assert navy at higher specificity. */
+.ba h3,.slide.dark .ba h3{font-size:clamp(1rem,1.2vw,1.18rem);color:var(--navy-dark);margin-bottom:8px}
+.ba p,.ba li{font-size:clamp(.78rem,.94vw,.94rem);color:var(--grey);line-height:1.5}
+.ba ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.ba li{padding-left:18px;position:relative}
+.ba.bad li::before{content:"✕";position:absolute;left:0;color:#a3441f;font-weight:800}
+.ba.good li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.price-tag{display:inline-flex;align-items:baseline;gap:8px;background:#eef9f2;border-radius:999px;
+  padding:7px 18px;font-weight:800;color:var(--green);font-size:clamp(.9rem,1.1vw,1.05rem)}
+.price-tag small{font-weight:600;color:#3a7d54;font-size:.78em}
+@media(max-width:900px){.flow{flex-wrap:wrap}.flow-step{flex:1 1 45%}.flow-arw{display:none}.before-after{grid-template-columns:1fr}}
