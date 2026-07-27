@@ -3,6 +3,11 @@
 Pitch deck for the Dick's Pawn Superstore CEO. 13 slides, self-contained HTML.
 
 **Live:** https://kylefriesmarketing.github.io/dicks-pawn-pitch/
+**Companion deck (Shopify plan):** https://kylefriesmarketing.github.io/dicks-pawn-pitch/shopify.html
+
+Two decks share one stylesheet (deck.css): index.html is the broad AI proposal;
+shopify.html is the implementation deep-dive — how the design installs as their
+Shopify theme and how the five Claude systems write drafts into the store.
 
 ## Using it
 - **Present:** arrow keys / space / swipe. `P` prints.

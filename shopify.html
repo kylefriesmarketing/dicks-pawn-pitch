@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shopify Plan — Dick's Pawn Superstore | Kyle Fries</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/dp-logo.png">
+<meta name="theme-color" content="#0c2547">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+<style>
+/* Additions for this deck only */
+.flow{display:flex;align-items:stretch;gap:9px;flex-wrap:nowrap}
+.flow-step{flex:1;background:#fff;border-radius:13px;padding:13px 15px;min-width:0;
+  box-shadow:inset 0 0 0 1px rgba(12,37,71,.10),0 3px 12px rgba(12,37,71,.07);text-align:center}
+.flow-step .fs-n{width:28px;height:28px;border-radius:50%;background:var(--ice);color:var(--navy);
+  display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;margin-bottom:7px}
+.flow-step b{display:block;font-size:clamp(.82rem,1vw,1rem);color:var(--navy-dark);margin-bottom:3px;line-height:1.25}
+.flow-step p{font-size:clamp(.7rem,.84vw,.84rem);color:var(--grey);line-height:1.4}
+.flow-arw{display:flex;align-items:center;color:var(--navy);opacity:.4;font-size:1.15rem;font-weight:800;flex:none}
+.flow-step.hot{box-shadow:inset 0 0 0 2px var(--red-bright),0 3px 12px rgba(198,40,45,.13)}
+.flow-step.hot .fs-n{background:#fdecec;color:var(--red)}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,24px)}
+.ba{border-radius:15px;padding:clamp(15px,1.6vw,24px)}
+.ba.bad{background:#fdf3f0;box-shadow:inset 0 0 0 1px rgba(163,68,31,.25)}
+.ba.good{background:#eef9f2;box-shadow:inset 0 0 0 1px rgba(31,157,85,.3)}
+.ba .ba-k{font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;display:block}
+.ba.bad .ba-k{color:#a3441f}
+.ba.good .ba-k{color:var(--green)}
+/* .slide.dark h3 in deck.css paints headings white; these cards are light
+   panels sitting ON a dark slide, so re-assert navy at higher specificity. */
+.ba h3,.slide.dark .ba h3{font-size:clamp(1rem,1.2vw,1.18rem);color:var(--navy-dark);margin-bottom:8px}
+.ba p,.ba li{font-size:clamp(.78rem,.94vw,.94rem);color:var(--grey);line-height:1.5}
+.ba ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.ba li{padding-left:18px;position:relative}
+.ba.bad li::before{content:"✕";position:absolute;left:0;color:#a3441f;font-weight:800}
+.ba.good li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.price-tag{display:inline-flex;align-items:baseline;gap:8px;background:#eef9f2;border-radius:999px;
+  padding:7px 18px;font-weight:800;color:var(--green);font-size:clamp(.9rem,1.1vw,1.05rem)}
+.price-tag small{font-weight:600;color:#3a7d54;font-size:.78em}
+@media(max-width:900px){.flow{flex-wrap:wrap}.flow-step{flex:1 1 45%}.flow-arw{display:none}.before-after{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+<div id="deck">
+
+<!-- ========== 1. COVER ========== -->
+<section class="slide dark on cover">
+  <div class="cover-grid">
+    <div>
+      <span class="eyebrow">The Plan · Prepared for Dick's Pawn Superstore</span>
+      <h1>Nothing gets replaced.<br>Everything gets <em>better</em>.</h1>
+      <p class="s-sub" style="font-size:clamp(1rem,1.35vw,1.3rem)">How the new design and the AI systems plug directly into the Shopify store you already run — same checkout, same apps, same admin your team uses every day.</p>
+      <div class="cover-meta">
+        <div><b>Kyle Fries</b>Marketing &amp; AI Systems</div>
+        <div><b>Companion to</b>the AI proposal deck</div>
+        <div><b>July 2026</b>Valid 60 days</div>
+      </div>
+    </div>
+    <div class="cover-art">
+      <img class="logo" src="assets/dp-logo.png" alt="Dick's Pawn Superstore logo">
+      <div class="cover-badge">
+        <div class="big">Zero migration</div>
+        <small>Your store stays your store.<br>We upgrade it in place.</small>
+      </div>
+    </div>
+  </div>
+  <p class="foot-note">Every claim about your store in this deck was verified against your live site and public product feed. Nothing here requires replacing a system you already pay for.</p>
+</section>
+
+<!-- ========== 2. YOU ALREADY OWN THE HARD PART ========== -->
+<section class="slide">
+  <span class="eyebrow">Starting point</span>
+  <h2 class="s-title">You already own the hard part</h2>
+  <p class="s-sub">Most consultants would open by pitching a migration. You don't need one — your Shopify store is a solid foundation doing real work today.</p>
+  <div class="body-flow">
+    <div class="stats" style="margin-bottom:clamp(13px,1.8vh,22px)">
+      <div class="stat"><div class="n">1,565</div><div class="l">products live on Shopify right now</div></div>
+      <div class="stat"><div class="n">✓</div><div class="l">checkout, cart &amp; payments working</div></div>
+      <div class="stat"><div class="n">✓</div><div class="l">product pages already correct for Google</div></div>
+      <div class="stat"><div class="n">3+</div><div class="l">paid apps in use (incl. an SMS tool)</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>What's strong</h3>
+        <p>Shopify handles the genuinely hard parts — secure checkout, inventory records, order management — and your product pages already carry the correct technical markup. Credit where due: that part is done right.</p>
+      </div>
+      <div class="card">
+        <h3>What's missing</h3>
+        <p>The storefront design undersells the business, the catalogue is fed by <strong>hand-typing</strong> (your product codes show six different people's initials in twelve different formats), and none of your five cities has its own page.</p>
+      </div>
+    </div>
+    <p class="pull" style="margin-top:clamp(12px,1.6vh,20px)">The plan: keep the engine, upgrade the body, and give it an AI layer that does the typing.</p>
+  </div>
+</section>
+
+<!-- ========== 3. HOW IT CONNECTS ========== -->
+<section class="slide tint">
+  <span class="eyebrow">The connection</span>
+  <h2 class="s-title">The new site becomes your store's theme</h2>
+  <p class="s-sub">Shopify separates the engine (products, checkout, orders) from the <strong>theme</strong> — the design layer customers see. Everything you saw on the demo site installs as a new theme on your existing store.</p>
+  <div class="body-flow">
+    <div class="flow" style="margin-bottom:clamp(13px,1.8vh,22px)">
+      <div class="flow-step"><span class="fs-n">1</span><b>Install quietly</b><p>The new design is added as an <em>unpublished</em> theme. Customers see nothing.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">2</span><b>You preview privately</b><p>A private link shows your real store — live products, live prices — in the new design.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step hot"><span class="fs-n">3</span><b>One click to launch</b><p>When you approve, publishing is a single click. No downtime, no data moves.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">4</span><b>One click back</b><p>Your current theme stays saved. If you ever want it back, that's one click too.</p></div>
+    </div>
+    <div class="grid g3">
+      <div class="card accent-green"><div class="num">✓</div><h3>Checkout untouched</h3><p>Payments, cart, shipping, taxes — all Shopify's engine, none of it changes.</p></div>
+      <div class="card accent-green"><div class="num">✓</div><h3>Apps keep working</h3><p>Call-for-Price, your SMS marketing tool, the eBay flow — they plug into the engine, not the design.</p></div>
+      <div class="card accent-green"><div class="num">✓</div><h3>Same admin for staff</h3><p>Your team adds and edits products exactly where they do today. Nothing new to learn.</p></div>
+    </div>
+  </div>
+  <p class="foot-note">What this needs from you: collaborator access to your Shopify admin (design + products only — no orders, no customers, no billing). That's the one key that unlocks the whole plan.</p>
+</section>
+
+<!-- ========== 4. WHY THIS WAY ========== -->
+<section class="slide">
+  <span class="eyebrow">The alternatives, considered</span>
+  <h2 class="s-title">Four ways to do this — three are wrong for you</h2>
+  <div class="body-flow">
+    <table class="cmp">
+      <thead><tr><th style="width:24%">Approach</th><th style="width:12%">Verdict</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Migrate to a new platform</td><td class="was">✕ No</td><td>Months of risk to rebuild what already works. You'd pay to break checkout, apps, and your Google standing — then pay again to fix it.</td></tr>
+        <tr><td>Run a separate new website</td><td class="was">✕ No</td><td>Two sites competing for the same searches confuses Google and your customers. The demo site proved the design; it shouldn't live beside the real store.</td></tr>
+        <tr><td>A custom "headless" storefront</td><td class="was">✕ No</td><td>The trendy option — and overkill. More moving parts, more to maintain, checkout gets clunkier. Built for companies with an engineering team on payroll.</td></tr>
+        <tr><td><strong>New theme on your existing store</strong></td><td class="now">✓ Yes</td><td>All the visual and search upgrades, zero disruption, fully reversible. And it makes one hard problem disappear entirely — next slide.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note">Being told which options to skip is part of what you're paying for. The theme route is also the cheapest — which is not usually how "best" works out.</p>
+</section>
+
+<!-- ========== 5. THE SYNC PROBLEM VANISHES ========== -->
+<section class="slide dark">
+  <span class="eyebrow">The problem that disappears</span>
+  <h2 class="s-title">Sold in the store = gone from the site.<br>Automatically. Always.</h2>
+  <p class="s-sub" style="margin-bottom:clamp(14px,2vh,24px)">Your inventory is one-of-a-kind — quantity one of everything. The worst failure a pawn shop's website can have is selling a ring in Conway that's still listed online.</p>
+  <div class="before-after">
+    <div class="ba bad">
+      <span class="ba-k">With a separate website</span>
+      <h3>A sync you have to babysit</h3>
+      <ul>
+        <li>Every sale must be copied to the site — by hand or by a feed that can break</li>
+        <li>A missed delisting means selling the same ring twice</li>
+        <li>An angry refund, a bad review, staff time cleaning it up</li>
+      </ul>
+    </div>
+    <div class="ba good">
+      <span class="ba-k">With the theme approach</span>
+      <h3>Nothing to sync — the site is the store</h3>
+      <ul>
+        <li>The website reads live inventory directly from Shopify</li>
+        <li>Mark it sold at the counter → it's off the site that second</li>
+        <li>No feed, no babysitting, no way for it to drift</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pull" style="margin-top:clamp(14px,2vh,22px)">This isn't a feature we build — it's a problem the architecture makes impossible. That's the best kind of fix.</p>
+</section>
+
+<!-- ========== 6. THE AI PATTERN ========== -->
+<section class="slide">
+  <span class="eyebrow">The AI layer</span>
+  <h2 class="s-title">Every AI system follows one safe pattern</h2>
+  <p class="s-sub">Powered by Claude, Anthropic's AI. Five systems, one shape — and the "approve" step always happens inside the Shopify admin your team already uses.</p>
+  <div class="body-flow">
+    <div class="flow" style="margin-bottom:clamp(13px,1.8vh,22px)">
+      <div class="flow-step"><span class="fs-n">1</span><b>Something happens</b><p>A photo is taken, an item arrives, a review comes in.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step hot"><span class="fs-n">2</span><b>AI does the typing</b><p>Claude writes the listing, applies the category, drafts the reply.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">3</span><b>Saved as a draft</b><p>Invisible to customers. Sitting in your Shopify admin, waiting.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">4</span><b>Your staff approve</b><p>Review, edit if needed, click Active — the same click they make today.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">5</span><b>It goes live</b><p>On the site, correctly categorised, ready to sell.</p></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Why drafts matter</h3>
+        <p>Shopify has a built-in "draft product" state — invisible to customers until activated. The AI writes into <strong>drafts only</strong>. Nothing it produces reaches a customer without a human clicking approve. No new review tool to learn; the gate is the admin your team lives in.</p>
+      </div>
+      <div class="card">
+        <h3>What the AI never touches</h3>
+        <p>Your pawn system — loans, tickets, customer identities, compliance — is never connected to the AI. Claude only ever sees <strong>merchandise</strong>: photos, titles, item numbers. And prices are <em>suggestions</em>; the number that goes live is always your appraiser's.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. LISTING ASSISTANT ========== -->
+<section class="slide tint">
+  <span class="eyebrow">System 1 · The pilot</span>
+  <h2 class="s-title">Photos in. Finished listing out.</h2>
+  <p class="s-sub">The proof this is needed is in your own data: your product codes end in six different people's initials, in twelve different formats. That's your staff hand-typing every item into Shopify.</p>
+  <div class="body-flow">
+    <div class="flow" style="margin-bottom:clamp(13px,1.8vh,22px)">
+      <div class="flow-step"><span class="fs-n">📱</span><b>Staff snaps photos</b><p>A phone page: 1–4 photos, the item number, optionally a few words — "14k rope chain, 24 inch, 20 grams".</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step hot"><span class="fs-n">🤖</span><b>Claude writes everything</b><p>Title in your house style, full description, correct department and category, condition notes it can see in the photos, and a suggested price range.</p></div>
+      <div class="flow-arw">›</div>
+      <div class="flow-step"><span class="fs-n">✓</span><b>Draft lands in Shopify</b><p>Photos attached, tags applied. Your appraiser sets the real price, clicks Active. Minutes of typing becomes seconds of reviewing.</p></div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <span class="price-tag">≈ 5¢ <small>AI cost per listing — included in the plan</small></span>
+      <span class="price-tag">2 weeks <small>to prove it, timed on your real items</small></span>
+    </div>
+  </div>
+  <p class="foot-note">This is the $1,500 pilot from the main proposal: one department, before/after timing on 20 real items, written findings either way. Same offer — now you can see exactly what it builds.</p>
+</section>
+
+<!-- ========== 8. CATALOG BRAIN ========== -->
+<section class="slide">
+  <span class="eyebrow">System 2 · Runs once, pays forever</span>
+  <h2 class="s-title">Your catalogue, finally organised like a superstore</h2>
+  <div class="body-flow">
+    <div class="grid g2" style="margin-bottom:clamp(12px,1.6vh,20px)">
+      <div class="card">
+        <h3>The hidden problem</h3>
+        <p>Your team tags products with internal shorthand — and it's consistent, which is genuinely rare. But it's private shorthand: while building the demo I found that reading one code naively files <strong>Louis Vuitton handbags under "Tools &amp; Hardware"</strong>. Your own website search inherits confusions like that today.</p>
+      </div>
+      <div class="card">
+        <h3>The fix</h3>
+        <p>Claude reads all 1,565 products once — titles plus your existing codes — and writes clean, universal categories back into Shopify: department, type, brand, metal. Your staff's tags stay untouched; the new ones are added alongside.</p>
+      </div>
+    </div>
+    <div class="grid g3">
+      <div class="card accent-green"><div class="num">1</div><h3>Real category pages</h3><p>"Gold Rings", "Power Tools", "Designer Bags" become true Shopify collections that update themselves as stock changes.</p></div>
+      <div class="card accent-green"><div class="num">2</div><h3>Jewelry gets navigable</h3><p>65% of your catalogue is jewelry. Shoppers filter rings / necklaces / bracelets / watches instead of scrolling 991 items.</p></div>
+      <div class="card accent-green"><div class="num">3</div><h3>Every future item, automatic</h3><p>New products get categorised the moment they're created — whether the Listing Assistant made them or a staff member typed them.</p></div>
+    </div>
+  </div>
+  <p class="foot-note">One-time AI cost for the full catalogue: under $10 — it runs as an overnight batch job. This is the least glamorous system in the plan and possibly the highest-value one.</p>
+</section>
+
+<!-- ========== 9. THREE MORE SYSTEMS ========== -->
+<section class="slide tint">
+  <span class="eyebrow">Systems 3–5 · Phases 2 and 3</span>
+  <h2 class="s-title">Built on the same store, the same pattern</h2>
+  <div class="body-flow">
+    <div class="grid g3">
+      <div class="card">
+        <div class="num">3</div>
+        <h3>"You asked — it just came in"</h3>
+        <p>Counter staff log what customers are hunting for. When a matching item lands in Shopify, Claude spots the match and drafts a text — sent through the <strong>SMS app you already pay for</strong>. A staff member approves the day's queue in one sitting.</p>
+        <div class="tagline">Highest-intent list <b>you own</b></div>
+      </div>
+      <div class="card">
+        <div class="num">4</div>
+        <h3>Ask-the-store, answered instantly</h3>
+        <p>A website chat that answers "are you open," "do you buy tools," and — because it reads your live Shopify inventory — "do you have any PS5s?" Every real conversation still ends with your phone number; the widget just absorbs the calls that never needed a person.</p>
+        <div class="tagline">Phone rings for <b>real calls</b></div>
+      </div>
+      <div class="card">
+        <div class="num">5</div>
+        <h3>Every review, answered well</h3>
+        <p>2,000+ Google reviews across five stores deserve replies. Claude drafts each one in your voice; a manager approves or edits before anything posts. Nothing reaches the public unread — same rule as everywhere else.</p>
+        <div class="tagline">Reputation <b>maintained</b></div>
+      </div>
+    </div>
+    <p class="pull" style="margin-top:clamp(13px,1.8vh,20px)">Notice what's <em>not</em> here: no new subscriptions, no new dashboards, no system your team has to learn. Everything lands in Shopify, your SMS app, or an approval queue.</p>
+  </div>
+</section>
+
+<!-- ========== 10. GUARDRAILS ========== -->
+<section class="slide">
+  <span class="eyebrow">The rules that don't bend</span>
+  <h2 class="s-title">What stays yours, always</h2>
+  <div class="body-flow">
+    <div class="no-list" style="max-width:880px">
+      <div class="no-item"><span class="x">1</span><div><b>The pawn system is never connected</b><p>Loans, tickets, IDs, reporting — your regulated core stays exactly as it is. The AI layer reads and writes merchandise listings, nothing else.</p></div></div>
+      <div class="no-item"><span class="x">2</span><div><b>No customer data goes to the AI</b><p>Claude sees photos of merchandise and product text. Never names, numbers, or transactions.</p></div></div>
+      <div class="no-item"><span class="x">3</span><div><b>Prices are decided by people</b><p>The AI suggests a range with its reasoning. The number that goes live is always your appraiser's call.</p></div></div>
+      <div class="no-item"><span class="x">4</span><div><b>Nothing publishes unread</b><p>Listings, texts, review replies — all drafts until a human approves. Enforced by how the systems are built, not by policy.</p></div></div>
+      <div class="no-item"><span class="x">5</span><div><b>Everything is reversible and everything is yours</b><p>The theme can be rolled back in one click. If we ever part ways, the theme, the categories, and the systems stay with your store.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 11. 90 DAYS ========== -->
+<section class="slide tint">
+  <span class="eyebrow">The rollout</span>
+  <h2 class="s-title">90 days, three phases, each one measured</h2>
+  <p class="s-sub">Same plan as the main proposal — now you can see exactly what happens inside Shopify at each step.</p>
+  <div class="body-flow">
+    <div class="phases">
+      <div class="phase">
+        <div class="wk">Weeks 1–3</div>
+        <h3>New storefront</h3>
+        <ul>
+          <li>New design installed as your theme</li>
+          <li>Catalogue organised (System 2)</li>
+          <li>Real collections &amp; jewelry filters</li>
+          <li>5 city pages published</li>
+          <li>You preview privately → one-click launch</li>
+        </ul>
+        <div class="out">You'll see: <b>the new site live on dickspawn.com</b> and baseline numbers recorded.</div>
+      </div>
+      <div class="phase">
+        <div class="wk">Weeks 4–8</div>
+        <h3>The typing stops</h3>
+        <ul>
+          <li>Listing Assistant pilot in one department</li>
+          <li>Wants-list capture at the counter</li>
+          <li>Auto-categorisation on every new item</li>
+          <li>Staff training + written runbook</li>
+        </ul>
+        <div class="out">You'll see: <b>minutes per listing, before vs after</b>, timed on your real items.</div>
+      </div>
+      <div class="phase">
+        <div class="wk">Weeks 9–12</div>
+        <h3>Reach</h3>
+        <ul>
+          <li>Listing Assistant to all departments</li>
+          <li>Arrival alerts through your SMS app</li>
+          <li>Ask-the-store widget on the site</li>
+          <li>Review replies flowing</li>
+        </ul>
+        <div class="out">You'll see: <b>items listed per week and online sales</b> vs the week-3 baseline.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 12. WHAT I NEED ========== -->
+<section class="slide">
+  <span class="eyebrow">To start</span>
+  <h2 class="s-title">Four things — and only the first one is urgent</h2>
+  <div class="body-flow">
+    <div class="grid g2">
+      <div class="card accent-red">
+        <div class="num">1</div>
+        <h3>Shopify collaborator access</h3>
+        <p>Design and products permissions only — no orders, customers, or billing. Shopify's collaborator system means you grant it in two minutes and can revoke it just as fast. <strong>This one key unlocks the entire plan.</strong></p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>One answer about your pawn software</h3>
+        <p>What runs at the counter, and does the licence include online-store connectivity? If you already pay for a sync, I'll build on it rather than around it — and tell you so.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>A look at your SMS app's plan</h3>
+        <p>If your One AI subscription supports automation, arrival alerts reuse it at no extra cost. If not, the fallback costs about a penny per text.</p>
+      </div>
+      <div class="card">
+        <div class="num">4</div>
+        <h3>Google Business Profile access</h3>
+        <p>Only needed by Phase 3, for the review responder. Manager access, revocable anytime.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot-note">Nothing on this list is a purchase. The plan runs on what you already own, plus AI usage that's included in the pricing on the next slide.</p>
+</section>
+
+<!-- ========== 13. PRICING + CLOSE ========== -->
+<section class="slide dark">
+  <div class="body-flow" style="justify-content:center">
+    <span class="eyebrow">Same pricing as the main proposal</span>
+    <h2 class="s-title" style="max-width:22ch">Start with the pilot. The store you already own does the rest.</h2>
+    <p class="s-sub" style="font-size:clamp(1rem,1.3vw,1.24rem);max-width:62ch;margin-top:12px">
+      $1,500 pilot (two weeks, one department, credited toward launch) → $7,500 launch (the full 90-day plan) → optional $2,400/month ongoing. <strong>All AI usage costs are included</strong> — no per-listing fees, no surprise API bills.
+    </p>
+    <div class="stats" style="margin-top:24px;max-width:780px">
+      <div class="stat"><div class="n">0</div><div class="l">systems replaced or migrated</div></div>
+      <div class="stat"><div class="n">1 click</div><div class="l">to launch — and to roll back</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">of AI output human-approved</div></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-red" href="https://kylefriesmarketing.github.io/dicks-pawn-redesign/" target="_blank" rel="noopener">See the design live →</a>
+      <a class="btn btn-ghost" href="mailto:kfreezer666@gmail.com?subject=Dick's%20Pawn%20—%20Shopify%20plan">Grant access &amp; start</a>
+    </div>
+    <p class="foot-note" style="margin-top:24px">Kyle Fries · Myrtle Beach, SC · kfreezer666@gmail.com<br>
+    Add your phone number here before sending.</p>
+  </div>
+</section>
+
+</div>
+
+<div id="hud">
+  <span id="hud-n">1</span><span class="sep">/</span><span id="hud-t">13</span>
+  <button id="prev" aria-label="Previous slide">‹</button>
+  <button id="next" aria-label="Next slide">›</button>
+</div>
+<div id="hint">← → or space to move · P to print</div>
+
+<script>
+(function () {
+  const slides = [...document.querySelectorAll('.slide')];
+  const bar = document.getElementById('bar');
+  const hudN = document.getElementById('hud-n');
+  const hint = document.getElementById('hint');
+  document.getElementById('hud-t').textContent = slides.length;
+  let i = 0;
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('on', k === i));
+    bar.style.width = ((i + 1) / slides.length * 100) + '%';
+    hudN.textContent = i + 1;
+    location.hash = i ? 's' + (i + 1) : '';
+    slides[i].scrollTop = 0;
+  }
+  const next = () => show(i + 1), prev = () => show(i - 1);
+
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+
+  addEventListener('keydown', e => {
+    if (/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    if (['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); prev(); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(slides.length - 1);
+    else if (e.key.toLowerCase() === 'p') { e.preventDefault(); print(); }
+    hint.classList.add('gone');
+  });
+
+  let x0 = null;
+  addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 60) { dx < 0 ? next() : prev(); hint.classList.add('gone'); }
+    x0 = null;
+  }, { passive: true });
+
+  const m = location.hash.match(/^#s(\d+)$/);
+  show(m ? (+m[1] - 1) : 0);
+  setTimeout(() => hint.classList.add('gone'), 6000);
+})();
+</script>
+</body>
+</html>
